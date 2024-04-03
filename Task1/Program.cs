@@ -1,23 +1,19 @@
-﻿int PrintNumbers(int m, int n)
+﻿void PrintNumbers(int m, int n)
 {
-    int result = 0;
-
-    if (m == n)
-    {
-        Console.WriteLine(result + m);
-        return n;
-    }
     if (m > n)
     {
-        Console.WriteLine(m - result);
-        return m;
+        Console.WriteLine(m);
+        PrintNumbers(m - 1, n);
     }
-    Console.WriteLine(result + m);
-    m++;
-    
-    PrintNumbers(m, n);
-    return result;
+    else if( m == n)
+    {
+        Console.WriteLine(n);
+    }
+    if (n > m)
+    {
+       PrintNumbers(m, n - 1);
+       Console.WriteLine(n);
+    }
 }
 
-
-PrintNumbers(2, 4);
+PrintNumbers(4, 8);
